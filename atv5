@@ -1,0 +1,23 @@
+import random
+
+numero = random.randint(1,100)
+tentativas = 0
+masTentativas = 10
+escolhas = 100
+print("que comece os jogos")
+print(f"voce possui {masTentativas} tentativas")
+while tentativas < 10:
+    escolhas = int(input("escolha um numero"))
+    if escolha == numero:
+        print ("parabens voce acertou o numero.")
+    elif escolha + 1 == numero:
+        print ("quem sabe um pouco mais alto")
+    elif escolha + 1 == numero:
+        print ("quem sabe um pouco mais baixo")
+    elif escolha < numero:
+        print (f"talvez um valor mais alto de {escolha}")
+    elif escolha > numero:
+        print (f"talvez um valor mais baixo de {escolha}")
+        
+print ("obrigado por jogar")
+    
