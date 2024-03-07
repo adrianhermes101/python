@@ -1,0 +1,12 @@
+mes = input("digite seu mes")
+if mes in ("janeiro,fevereiro,março,dezembro"):
+    categoria = "verão"
+elif mes in ("março, abril, maio, junho,"):
+    categoria = "Outono"
+elif mes in ("junho, julho, agosto, setembro"):
+    categoria = "Inverno"
+elif mes in ("setembro,outubro,novembro,dezembro"):
+    categoria = "primavera"
+
+print(f"Você está na categoria: {categoria}.")
+

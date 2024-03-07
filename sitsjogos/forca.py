@@ -1,3 +1,5 @@
+import jogos
+
 def jogar():
 
     secreta = "amexa"
@@ -22,6 +24,7 @@ def jogar():
         print(f"Parabéns, você ganhou Nada")
     else:
         print(f"Que pena, você perdeu. a palavra era {secreta}")
+    jogos.escolha_jogo()
 
 if(__name__=="__main__"):
-    jogar()
+    jogar_forca()
