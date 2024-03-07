@@ -1,0 +1,15 @@
+nota1 = float(input("digite seu numero"))
+nota2 = float(input("digite seu numero"))
+nota3 = float(input("digite seu numero"))
+
+media = (nota1 + nota2 + nota3)/3
+
+print(f"a media sera {media}")
+
+//atv2//
+numPares = [2,4,6,8]
+
+num = float(input("digite seu numero")
+
+
+
