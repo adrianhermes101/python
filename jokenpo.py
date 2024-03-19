@@ -25,7 +25,7 @@ def jogar_jokenpo():
             ):
             print("voce ganhou")
         else:
-            print("vose fede")
+            print("vose perdeu kakaka")
         jogar_novamente = input("quer jogar novamente?").lower()
         if jogar_novamente != "sim":
             break
