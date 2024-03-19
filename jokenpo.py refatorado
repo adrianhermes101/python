@@ -1,0 +1,55 @@
+import random
+
+def jogar_jokenpo():
+    derrota = 0
+    vitoria = 0
+    opcoes = ["pedra", "papel", "tesoura"]
+    print("Bem-vindo camarada!")
+    print("Escolha pedra, papel ou tesoura")
+
+    while True:
+        print(opcoes)
+        escolha_jogador = input("Sua escolha: ").lower()
+        if escolha_jogador not in opcoes:
+            print("Escolha inválida, por favor, tente novamente.")
+            continue
+
+        escolha_computador = random.choice(opcoes)
+        print(f"Computador escolheu: {escolha_computador}")
+
+        resultado = define_vencedor(escolha_jogador, escolha_computador)
+        print(resultado)
+
+        if resultado == "voce ganhou":
+            vitoria += 1
+        elif resultado == "voce perdeu":
+            derrota += 1
+
+        total_partidas = vitoria + derrota
+        if total_partidas > 0:
+            win_rate = (vitoria / total_partidas) * 100
+        else:
+            win_rate = 0
+
+        print(f"Total de vitórias: {vitoria}")
+        print(f"Total de derrotas: {derrota}")
+        print(f"Você ganhou {vitoria} e perdeu {derrota}, e possui {win_rate:.2f}% de pontos")
+
+        jogar_novamente = input("Quer jogar novamente? (sim/não): ").lower()
+        if jogar_novamente != "sim":
+            break
+
+def define_vencedor(escolha_jogador, escolha_computador):
+    if escolha_jogador == escolha_computador:
+        return "empate"
+    elif (
+        (escolha_jogador == "pedra" and escolha_computador == "tesoura") or
+        (escolha_jogador == "tesoura" and escolha_computador == "papel") or
+        (escolha_jogador == "papel" and escolha_computador == "pedra") 
+    ):
+        return "voce ganhou"
+    else:
+        return "voce perdeu"
+    
+if __name__ == "__main__":    
+    jogar_jokenpo()
