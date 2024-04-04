@@ -14,6 +14,14 @@ def listar_arquivos():
     for arquivo in arquivos:
         print(arquivo)
 
+def listar_arquivos_diretorio():
+    diretorio = os.getcwd()
+    arquivo = os.listdir(diretorios)
+    print(f"Arquivos.{extensao} no diretório atual:")
+    for listar_arquivos in arquivos:
+        if listar_arquivos.endswith(extensao):
+            print (listar_arquivos)
+
 def main():
     lista = []
 
