@@ -1,9 +1,18 @@
+import os
+
 def gravar_lista(lista):
     nome_arq = input("Digite o nome do arquivo: ")
     with open(nome_arq, "w") as arquivo:
         for item in lista:
             arquivo.write(item + "\n")
     print(f"Arquivo gravado com sucesso: {nome_arq}")
+
+def listar_arquivos():
+    diretorio = os.getcwd()
+    arquivos = os.listdir(diretorio)
+
+    for arquivo in arquivos:
+        print(arquivo)
 
 def main():
     lista = []
@@ -15,8 +24,11 @@ def main():
         print("3. Mostrar a lista atual")
         print("4. Sair do programa")
         print("5. Gravar lista em um arquivo")
+        print("6. Ordenar lista")
+        print("7. Mostrar conteúdo de um arquivo")
+        print("8. Sair do programa")
 
-        opcao = input("Escolha uma opção (1/2/3/4/5): ")
+        opcao = input("Escolha uma opção (1/2/3/4/5/6/7/8): ")
 
         if opcao == "1":
             novo_item = input("Digite o novo item: ")
@@ -47,9 +59,23 @@ def main():
                 print("A lista está vazia. Não há nada para gravar.")
             else:
                 gravar_lista(lista)
+        elif opcao == "6":
+            lista.sort()
+            print("Lista ordenada:", lista)
+        elif opcao == "7":
+            nome_arq = input("Digite o nome do arquivo: ")
+            try:
+                with open(nome_arq, "r") as arquivo:
+                    conteudo = arquivo.read()
+                    print("Conteúdo do arquivo:")
+                    print(conteudo)
+            except FileNotFoundError:
+                print("Arquivo não encontrado.")
+        elif opcao == "8":
+            print("Saindo do programa...")
+            break
         else:
             print("Opção inválida. Por favor, escolha uma opção válida.")
-
 
 if __name__ == "__main__":
     main()
